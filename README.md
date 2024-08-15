@@ -27,6 +27,6 @@ Requisitos:
     - 1920x1080  - 1536x864
     - 1440x900   - 1280x720
     - 600x900  - 1280x800
-## JS - Algoritmo terminado y funcionando.
+## JS - Algoritmo completo y funcionando.
   
 
