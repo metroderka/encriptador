@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="./style/style1.css">
+</head>
+<body>
+    <main class="wrapper">
+        <section class="marco">
+            <div class="marco-logoAluraLatam">
+                <img class="marco-logoAluraLatam-img" src="./assets/Logo.png" alt="logo-Aluralatam">
+            </div>
+            <div class="marco-encriptar-bloque">
+                <div class ="marco-encriptar-bloque-textarea">
+                    <textarea placeholder="Ingrese texto aquí." class="marco-encriptar-bloque-textarea-texto" rows="1" cols="10" id="textousuario" wrap="hard"></textarea>  
+                </div>
+                <div class ="marco-encriptar-bloque-sololetras">
+                    <img class="marco-encriptar-bloque-sololetras-logo" src="./assets/bi_exclamation-circle-fill.png" alt="Exclamación">
+                    <p class="marco-encriptar-bloque-sololetras-txt">
+                        Solo letras minúsculas y sin acentos
+                    </p>
+                </div>
+                <div class ="marco-encriptar-bloque-botones">
+                    <button onclick="encriptarTexto()" class="marco-encriptar-bloque-botones-Encriptar">Encriptar</button>
+                    <button onclick="desencriptarTexto()" class="marco-encriptar-bloque-botones-Desencriptar">Desencriptar</button>
+                </div>
+            </div>
+            <div class="marco-desencriptar-bloque">
+                <div class="marco-desencriptar-bloque-area">
+                    <div class="marco-desencriptar-bloque-area-textarea" id="desencr-txt-area-bloque">
+                        <textarea class="marco-desencriptar-bloque-area-textarea-texto" Id="desencr-txt-area" rows="1" cols="5" wrap="hard"></textarea>
+                        <div class="marco-desencriptar-bloque-area-nino-texto" id="verObjeto1">
+                            <img class="marco-desencriptar-bloque-area-nino-texto-nene" src="./assets/Muñeco.png" alt="muñeco">
+                        </div>
+                        <div class="marco-desencriptar-bloque-area-nino-texto-texto">
+                            <p class="desencriptar-bloque_texto1" id="texto1_1">Ningún mensaje fue</p>
+                            <p class="desencriptar-bloque_texto1" id="texto1_2">encontrado</p>
+                            <p class="desencriptar-bloque_texto2" id="texto2_1">
+                                Ingresa el texto que desees encriptar o</p>
+                            <p class="desencriptar-bloque_texto2" id="texto2_2">desencriptar</p>
+                        </div>    
+                                  
+                        
+                    </div>
+
+                    <div class="marco-desencriptar-bloque-area-boton" id="desencr-txt-area_copiar">
+                        <button onclick="copiarTexto()" class="marco-desencriptar-bloque-area-boton-copiar" Id="desencr-txt-area_copiar">Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+ 
+ <footer>Por Walter Markiw.</footer>    
+ 
+    <script src="app1.js"></script>
+</body>
+</html>

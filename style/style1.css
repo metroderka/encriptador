@@ -1,0 +1,608 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    margin:0px;padding:0px;border:0px;
+}
+html{
+    height:100vh;
+}
+:root{
+    --pagina-background-color: #F3F5FC;
+    --text-color:#0A3871;
+    --encriptar-button-back-color:#0A3871;
+    --encriptar-button-text-color:#FFFFFF;
+    --desencriptar-button-back-color:#D8DFE8;
+    --desencriptar-button-text-color:#0A3871;
+    --desencriptar-button-border-color:#495057;
+    --desencriptar-msg-back-color:#FFFFFF;
+    --no-msg-hallado-txt-color:#343A40;
+    --ingresar-msg-encriptado-txt-color:#495057;
+    --solo-letras-txt-color:#495057;
+}
+body{
+    background:var(--pagina-background-color);
+    height:100vh;
+
+}
+.wrapper{
+    width:100%;
+    max-width:100%;
+    margin: 0 auto;
+    height:100vh;
+
+}
+.marco{
+    display:flex;
+    width:100%;
+    margin:0 auto;
+    flex-grow: 1;
+    height:100vh;
+}
+.marco-logoAluraLatam{
+    display:flex;
+    align-items:first baseline;
+    background:var(--pagina-background-color);
+    min-width:13%;
+}
+    .marco-logoAluraLatam-img{
+        margin-top:30%;
+        padding-right:0%;
+        margin-right:5px;
+        margin-left:20%;
+    }
+.marco-encriptar-bloque{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    flex-shrink:1;
+    background:var(--pagina-background-color);
+    min-width:54%;
+}
+::placeholder{
+    color:var(--text-color);
+    font-style:normal;
+    text-align:left;
+}
+
+    .marco-encriptar-bloque-textarea{
+        display:flex;
+        flex-direction:column;
+        justify-content:space-around;
+        flex-grow:1;
+        min-height:60%;
+        max-height:85%;
+        max-width:100%;
+        background: var(--pagina-background-color);
+    }
+        .marco-encriptar-bloque-textarea-texto{
+            padding: 2% 2% 2% 2%;
+            margin-top: 0%;
+            margin-left:10%;
+            margin-right:10%;
+            min-width:80%;
+            min-height:60%;
+            max-height:70%;
+            outline:none;
+            border:none;
+            resize: none;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-size:x-large;
+            font-weight: 300;
+            font-style: normal;
+            font-variation-settings:"slnt" 0;
+            color:var(--text-color);
+            background-color: var(--pagina-background-color);
+
+        }
+    .marco-encriptar-bloque-sololetras{
+        display:flex;
+        flex-direction:row;
+        margin-top:5%;
+        margin-bottom:0.5%;
+        min-height:2%;
+        max-width:100%;
+        align-items: center;
+    
+    }
+        .marco-encriptar-bloque-sololetras-logo{
+            width:1rem;
+            height:1rem;
+            padding-right:1%;
+            margin-left:10%;
+        }
+        .marco-encriptar-bloque-sololetras-txt{
+            font-size: 60%;
+        }
+    .marco-encriptar-bloque-botones{
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        min-height:5%;
+        padding:0%;
+        max-width:100%;
+        background: var(--pagina-background-color);   
+        margin-bottom:3%;
+
+    }
+        .marco-encriptar-bloque-botones-Encriptar{
+            background-color: var(--encriptar-button-back-color);
+            color: var(--encriptar-button-text-color);
+            width:40%;
+            min-width:min-content;
+            padding-top:1px;
+            padding-right:2%;
+            height:100%;
+            max-height: 3.5rem;
+            min-height:3rem;
+            margin-left:9%;
+            border-radius:12px;
+            cursor:pointer;
+            /*transition: 0.15s;*/
+        }
+        .marco-encriptar-bloque-botones-Desencriptar{
+            background-color: var(--desencriptar-button-back-color);
+            color: var(--desencriptar-button-text-color);
+            border-color: var(--desencriptar-button-border-color);
+            border: 1px solid;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            width:40%;
+            min-width:min-content;
+            padding-top:1px;
+            height:100%;
+            max-height:3.5rem;
+            min-height:3rem;
+            margin-left:2%;
+            border-radius:12px;
+            cursor:pointer;
+            /*transition: 0.15s;*/
+            box-shadow: -1px 3px 3px #495057; 
+        }
+           
+
+.marco-desencriptar-bloque{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+
+    padding-bottom:1%;
+    padding-top:3%;
+    flex-grow:1;   
+    flex-shrink:1; 
+    background:var(--pagina-background-color);
+    min-width:33%;
+
+}
+    .marco-desencriptar-bloque-area{
+        display:flex;
+        flex-direction: column;        
+        justify-content:space-between;
+        margin-left:10%;
+        background:var(--desencriptar-msg-back-color);
+        min-height:97%;
+        max-width:80%;
+        padding-bottom:12px;
+        min-width: 0%; 
+        border-radius:12px;
+}
+
+        .marco-desencriptar-bloque-area-textarea{
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-start;
+            align-items:center;
+            min-width:0%;  
+            flex-shrink:1;
+            min-height: 80%;
+            border-radius:12px;
+            background:var(--desencriptar-msg-back-color);
+            text-wrap:balance;
+        }
+         
+            .marco-desencriptar-bloque-area-nino-texto{
+                display:flex;
+                flex-direction:column;
+                flex-shrink:1;
+                align-items: center;
+                background: var(--desencriptar-msg-back-color);
+                justify-content:space-around;
+                flex-flow: row nowrap;
+                min-height:0%;
+                max-width:80%;
+                padding:2%;
+                text-align: center;
+        }
+
+            .marco-desencriptar-bloque-area-nino-texto-nene{
+                display:flex;
+                flex-shrink:1;
+                margin-top:30%;
+                min-width:0;
+                min-height:0;
+                max-height:90%;
+
+            }
+            .marco-desencriptar-bloque-area-nino-texto-texto{
+                display:flex;
+                margin-top:5%;
+                flex-shrink:1;
+                flex-direction:column;
+                justify-content: center;
+            }
+            .desencriptar-bloque_texto1{
+                text-align: center;
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto; 
+                font-weight: 600;
+                
+                font-variation-settings:"slnt" 0; 
+                color:var(--no-msg-hallado-txt-color);  
+            }
+            .desencriptar-bloque_texto2{
+                text-align: center;
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto; 
+                
+                font-weight: 300;
+                font-style: normal;
+                font-size: 70%;
+            }
+
+            .marco-desencriptar-bloque-area-textarea-texto{
+                display:flex;
+                padding: 2% 2% 2% 2%;
+                margin-top: 3%;
+                margin-left:6%;
+                margin-right:5%;
+                min-width:80%;
+                min-height:40%;
+                max-height:70%;
+                outline:none;
+                border:none;
+                resize:both;
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-size:large;
+                font-weight: 300;
+                font-style: normal;
+                font-variation-settings:"slnt" 0;
+                color:var(--text-color);
+                background-color: var(--desencriptar-msg-back-color);
+    
+
+            }
+            
+        .marco-desencriptar-bloque-area-boton{
+            display:flex;
+            flex-direction: row;
+            justify-content:space-around;
+            align-items: center;
+            min-width:90%;
+            min-height:min-content;
+            border-radius:12px;
+            background:var(--desencriptar-msg-back-color); 
+            padding-bottom:2%;
+            padding-top:1%;
+            padding-right:4%;
+            padding-left:4%;
+        }
+            .marco-desencriptar-bloque-area-boton-copiar{
+            
+                min-width:100%;
+                max-height:3.4rem;
+                min-height:3.0rem;
+                border-radius:12px;
+                border: 1px solid;
+                cursor:pointer;
+                border-color: var(--desencriptar-button-text-color);
+                color:var(--text-color)
+            }
+
+   
+
+footer{
+    background: #05488b;
+    color:#FFFFFF;
+    font-size: 1rem;
+    margin:0%;
+    padding:0%;
+}
+
+@media only screen and (max-width: 870px){
+    .marco{
+        display:flex;
+        flex-direction:column;
+        flex-shrink:1;
+        width:100%;
+        height:100%;
+    }
+    .marco-logoAluraLatam{
+        display:flex;
+        flex-direction: column;
+        flex-shrink:.8;
+        align-items:flex-start;
+        background:var(--pagina-background-color);
+        padding-left:0%;
+        min-height:3%;
+    }
+        .marco-logoAluraLatam-img{
+            margin-top:2%;
+            padding-left:0%;
+            margin-right:5px;
+            margin-left:0%;
+            min-height:1%;
+        }
+
+    .marco-encriptar-bloque{
+        display:flex;
+        flex-direction:column;
+        flex-grow:1;
+        flex-shrink:1;
+        background:var(--pagina-background-color);
+        min-height:60%;
+    }
+
+        .marco-encriptar-bloque-textarea{
+            display:flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height:50%;
+            max-width:100%;
+            background: var(--pagina-background-color);
+            padding-left:7%;
+        }
+    
+            .marco-encriptar-bloque-textarea-texto{
+
+                 margin-top:5%;
+                 margin-left:2%;
+                 margin-right:8%;
+                 min-width:80%;
+                 max-height:80%;
+                 outline:none;
+                 border:none;
+                 resize: none;
+                 font-family: "Inter", sans-serif;
+                 font-optical-sizing: auto;
+                 font-size:x-large;
+                 font-weight: 300;
+                 font-style: normal;
+                 font-variation-settings:"slnt" 0;
+                 color:var(--text-color);
+                 background-color: var(--pagina-background-color);
+            }
+        .marco-encriptar-bloque-sololetras-logo{
+            width:1.5em;
+            height:1.5em;
+            padding-right:1%;
+            margin-left:8%;
+        }
+        .marco-encriptar-bloque-sololetras-txt{
+            font-size: 60%;
+        }    
+        .marco-encriptar-bloque-botones{
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+            align-items: center;
+            min-height:min-content;
+            max-height:3.5rem;
+            flex-grow: 3;
+            min-height:fit-content;
+            padding-left:8%;
+            padding-right:8%;
+            max-width:100%;
+            background: var(--pagina-background-color);   
+            margin-bottom:3%;
+    
+        }
+
+
+        .marco-encriptar-bloque-botones-Encriptar{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow:3;
+            flex-shrink:2;
+            min-height:100%;
+            max-height:3.5rem;
+            width:40%;
+            min-width:min-content;
+            padding-top:1px;
+            padding-right:2%;
+            margin-left:0%;
+            border-radius:12px;
+        }
+        .marco-encriptar-bloque-botones-Desencriptar{
+            display:flex;
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow:3;
+            flex-shrink:2;
+            min-height:100%;
+            max-height:3.5rem;
+            width:40%;
+            min-width:min-content;
+            padding-top:1px;
+            margin-left:2%;
+            border-radius:12px;
+        }
+
+    .marco-desencriptar-bloque{
+
+        display:flex;
+        flex-direction:column;
+        flex-grow:1;
+        flex-shrink:1;
+        background: var(--pagina-background-color);
+        min-height:28%;
+        margin-bottom:3%;
+        max-width:100%;
+
+    }
+        .marco-desencriptar-bloque-area{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex-grow:1;
+            flex-shrink:1;
+            margin-left:8%;
+            bacKground:var(--desencriptar-msg-back-color);
+            min-height:60%;
+            max-width:85%;
+            border-radius:12px;
+    }    
+            .marco-desencriptar-bloque-area-textarea{
+                display:flex;
+                min-width:100%;
+                min-height: 80%;
+                border-radius:12px;
+                background:var(--encriptar-button-text-color);
+    }
+    
+            .marco-desencriptar-bloque-area-nino-texto{
+                display:none;
+            }
+
+            .marco-desencriptar-bloque-area-nino-texto-nene{
+                display:none;
+            }
+
+
+                .marco-desencriptar-bloque-area-textarea-texto{
+                    display:flex;
+               
+                    margin-top: 3%;
+
+                    margin-left:8%;
+                    margin-right:5%;
+
+                    min-width:80%;
+                    min-height:60%;
+                    max-height:70%;
+                    outline:none;
+                    border:none;
+                    resize:both;
+                    font-family: "Inter", sans-serif;
+                    font-optical-sizing: auto;
+                    font-size:large;
+                    font-weight: 300;
+                    font-style: normal;
+                    font-variation-settings:"slnt" 0;
+                    color:var(--text-color);
+                    background-color: var(--desencriptar-msg-back-color);
+    }
+    
+    .marco-desencriptar-bloque-area-boton{
+        display:flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+        min-width:90%;
+        min-height:min-content;
+        max-height:3.5rem;
+        flex-grow: 3;
+        border-radius:12px;
+        background:var(--encriptar-button-text-color); 
+        padding-bottom:1%;
+        padding-top:1%;
+        padding-right:4%;
+        padding-left:4%;
+    }
+        .marco-desencriptar-bloque-area-boton-copiar{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow:3;
+            flex-shrink:1;
+            max-width:95%;
+            min-height:100%;
+            max-height:3.5rem;
+
+            border-radius:12px;
+        }
+}
+
+@media only screen and (max-width: 380px){
+    .marco-encriptar-bloque{
+        display:flex;
+        flex-direction:column;
+        flex-grow:1;
+        flex-shrink:1;
+        background:var(--pagina-background-color);
+        min-height:40%;
+    }
+    .marco-encriptar-bloque-botones{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-around;
+        min-height:20%;
+        
+        min-width:max-content;
+        background: var(--pagina-background-color);   
+        margin-bottom:2%;
+    
+    }
+    .marco-encriptar-bloque-botones-Encriptar{
+        width:96%;
+        min-width:min-content;
+        padding-top:5px;
+        padding-right:0%;
+        height:100%;
+        max-height: 3.5rem;
+        min-height:1.5rem;
+        margin-bottom:2%;
+        margin-left:0%;
+    }
+    .marco-encriptar-bloque-botones-Desencriptar{
+        width:96%;
+        min-width:min-content;
+        padding-bottom:5px;
+        height:100%;
+        max-height:3.5rem;
+        min-height:1.5rem;
+        margin-left:0%;
+    }
+    .marco-desencriptar-bloque{
+        display:flex;
+        flex-direction:column;
+        flex-grow:1;
+        flex-shrink:1;
+        background:var(--pagina-background-color);
+        min-height:28%;
+        max-width:100%;
+    }
+    .marco-desencriptar-bloque-area-boton{
+        display:flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+        min-width:90%;
+        min-height:min-content;
+        max-height:3.5rem;
+        flex-grow: 3;
+        border-radius:12px;
+        background:var(--encriptar-button-text-color); 
+        padding-bottom:1%;
+        padding-top:1%;
+        padding-right:4%;
+        padding-left:4%;
+    }
+        .marco-desencriptar-bloque-area-boton-copiar{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow:3;
+            flex-shrink:1;
+            max-width:95%;
+            min-height:100%;
+            max-height:3.5rem;
+            border-radius:12px;
+        }
+}
+
+
+ 
